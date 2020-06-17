@@ -10,6 +10,6 @@ let testUrl = baseURl + key
 let timestamp ="ts=1"
 const hash = "hash=982b87adee39429590ab92ee9d7e0946"
 let queryURL = baseURl + timestamp + "&" + key + "&" + hash
-console.log(baseUrl)
+console.log(baseURl)
 console.log(queryURL)
 
