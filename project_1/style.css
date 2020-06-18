@@ -45,6 +45,6 @@ img {
     flex-direction: row; 
     justify-content: space-evenly;   
 }
-.series, .events {
+#series-container, #events-container {
     color: white
 }

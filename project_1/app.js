@@ -15,6 +15,7 @@ let queryURL = baseURL + queryType
 
 $(()=> {
 const getCharacter = () => {
+ 
     // ajax functionality modified from class example
     $.ajax({
         url: queryURL + nameQuery + '&' + ts + '&' + pubKey + '&' + hash
@@ -28,19 +29,21 @@ const getCharacter = () => {
         // console.log(characterData.data.results[0].name)  /// for debug
        
         //series button functionality
-        $('#series-container').on('click', (event) => {
+        $('.series').on('click', (event) => {
             event.preventDefault()
+            $('.series-results').remove()
             for (i=0; i <=20; i++) {
-            let series = $('<div>').text(characterData.data.results[0].series.items[i].name)
+            let series = $('<div class="series-results">').text(characterData.data.results[0].series.items[i].name)
             $('#series-container').append(series)
             }
         })
         
         // events button functionality
-        $('#events-container').on('click', (event) => {
+        $('.events').on('click', (event) => {
             event.preventDefault()
+            $('.events-results').remove()
             for (i=0; i <=20; i++) {
-            let events = $('<div>').text(characterData.data.results[0].events.items[i].name)
+            let events = $('<div class="events-results">').text(characterData.data.results[0].events.items[i].name)
             $('#events-container').append(events)
             }
         })
@@ -50,12 +53,13 @@ const getCharacter = () => {
 }
 // Get Name of character from input box
 $('form').on('submit', (event) => {
+    $('img').remove()
+    $('.events-results').remove()
+    $('.series-results').remove()
     event.preventDefault()
     nameQuery = $('input[type=text]').val()
     console.log(nameQuery)
     getCharacter()
 })
-
-
 
 })
