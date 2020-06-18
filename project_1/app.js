@@ -9,6 +9,7 @@ const ts = "ts=1592423954"
 const hash = "hash=cffe958a285936c219aa88249b47aab1"
 const queryType = "name="
 let nameQuery = ""
+let seriesQuery = ""
 let queryURL = baseURL + queryType 
 
 $(()=> {
@@ -22,8 +23,19 @@ const getCharacter = () => {
         `)
         const $img = $('<img>').attr('src',characterData.data.results[0].thumbnail.path+'.jpg')
         $('#character-container').prepend($img)
-        console.log(characterData.data.results[0].name)
-        console.log($img)
+        // console.log(characterData.data.results[0].name)
+       
+        //series button funtionality
+        $('#series-container').on('click', (event) => {
+            event.preventDefault()
+            for (i=0; i <=20; i++) {
+            let series = $('<div>').text(characterData.data.results[0].series.items[i].name)
+            $('#series-container').append(series)
+            }
+        })
+
+
+
     }, (error) =>{
         console.log('error')
     })
@@ -35,4 +47,7 @@ $('form').on('submit', (event) => {
     console.log(nameQuery)
     getCharacter()
 })
+
+
+
 })
