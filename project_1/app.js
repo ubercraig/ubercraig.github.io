@@ -20,7 +20,7 @@ const getCharacter = () => {
         <div id="name"> ${characterData.data.results[0].name}</div>
         <div id="bio"> ${characterData.data.results[0].description}</div>
         `)
-        const $img = $('<img id="thumbnail>').attr('src',characterData.data.results[0].thumbnail.path+'.jpg')
+        const $img = $('<img>').attr('src',characterData.data.results[0].thumbnail.path+'.jpg')
         $('#character-container').prepend($img)
         console.log(characterData.data.results[0].name)
         console.log($img)
