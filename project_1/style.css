@@ -22,8 +22,8 @@ a {
     flex-direction: row;
 }
 img {
-    width: 300px;
-    height: 300px;
+    width: 30vw;
+    height: 30vw;
 }
 #info-container {
     margin-left: 15px;
