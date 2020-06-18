@@ -14,6 +14,7 @@ let queryURL = baseURL + queryType
 
 $(()=> {
 const getCharacter = () => {
+    // ajax functionality modified from class example
     $.ajax({
         url: queryURL + nameQuery + '&' + ts + '&' + pubKey + '&' + hash
     }).then((characterData) => {
@@ -23,7 +24,7 @@ const getCharacter = () => {
         `)
         const $img = $('<img>').attr('src',characterData.data.results[0].thumbnail.path+'.jpg')
         $('#character-container').prepend($img)
-        // console.log(characterData.data.results[0].name)
+        // console.log(characterData.data.results[0].name)  /// for debug
        
         //series button funtionality
         $('#series-container').on('click', (event) => {
@@ -33,7 +34,15 @@ const getCharacter = () => {
             $('#series-container').append(series)
             }
         })
-
+        
+        // events button funtionality
+        $('#events-container').on('click', (event) => {
+            event.preventDefault()
+            for (i=0; i <=20; i++) {
+            let events = $('<div>').text(characterData.data.results[0].events.items[i].name)
+            $('#events-container').append(events)
+            }
+        })
 
 
     }, (error) =>{
