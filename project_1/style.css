@@ -1,12 +1,50 @@
+body {
+    max-width: 800px;
+    background-color: rgb(2, 2, 79);
+}
+form {
+    margin-top: 40px;
+}
 h1 {
     margin: auto;
     text-align: center;
-    color: blue;
+    color: white;
 }
 nav {
     text-align: center;
 }
+a {
+    color: white;
+}
+#character-container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+}
 img {
     width: 300px;
     height: 300px;
+}
+#info-container {
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+}
+#name {
+    font-size: 35px;
+    color: white;
+}
+#bio {
+    margin-top: 20px;
+    font-size: 20px;
+    color: white;
+}
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-evenly;   
+}
+.series, .events {
+    color: white
 }
