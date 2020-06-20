@@ -12,6 +12,7 @@ h1 {
 }
 nav {
     text-align: center;
+    margin-top: 7px;
 }
 a {
     color: white;
@@ -47,4 +48,8 @@ img {
 }
 #series-container, #events-container {
     color: white
+}
+h4 {
+    text-align: center;
+    color: white;
 }
