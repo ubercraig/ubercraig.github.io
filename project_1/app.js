@@ -55,7 +55,8 @@ $('form').on('submit', (event) => {
     $('img').remove()
     $('.events-results').remove()
     $('.series-results').remove()
-    
+    $('.series').show()
+    $('.events').show()
     event.preventDefault()
     nameQuery = $('input[type=text]').val()
     console.log(nameQuery)

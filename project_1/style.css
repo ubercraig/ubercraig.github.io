@@ -60,3 +60,6 @@ h5 {
 .events-results, .series-results {
     margin-top: 7px;
 }
+button {
+    display: none;
+}
