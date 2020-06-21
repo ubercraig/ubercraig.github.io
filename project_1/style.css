@@ -63,3 +63,10 @@ h5 {
 button {
     display: none;
 }
+.about-text {
+    font-size: 20px;
+    text-align: justify;
+    margin: 120px auto 100px;
+    max-width: 310px;
+    color: white;
+}
