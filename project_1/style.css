@@ -42,6 +42,7 @@ img {
     margin-top: 20px;
     font-size: 20px;
     color: white;
+    text-align: justify;
 }
 .button-container {
     margin-top: 20px;
@@ -50,7 +51,7 @@ img {
     justify-content: space-evenly;   
 }
 #series-container, #events-container {
-    margin-top: 7px;
+    margin-top: 15px;
     color: white
 }
 h5 {
@@ -70,3 +71,41 @@ button {
     max-width: 310px;
     color: white;
 }
+footer {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+/* tooltip code modified from https://www.w3schools.com/css/css_tooltip.asp */
+.tooltip {
+    position: relative;
+    display: inline-block
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: gray;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+  .tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;  /* At the top of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent gray transparent;
+  }
