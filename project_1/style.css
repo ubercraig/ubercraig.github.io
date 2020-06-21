@@ -23,8 +23,8 @@ a {
     flex-direction: row;
 }
 img {
-    width: 30vw;
-    height: 30vw;
+    width: 25vw;
+    height: 25vw;
 }
 #info-container {
     margin-left: 15px;
@@ -47,9 +47,13 @@ img {
     justify-content: space-evenly;   
 }
 #series-container, #events-container {
+    margin-top: 7px;
     color: white
 }
-h4 {
+h5 {
     text-align: center;
     color: white;
+}
+.events-results, .series-results {
+    margin-top: 7px;
 }
