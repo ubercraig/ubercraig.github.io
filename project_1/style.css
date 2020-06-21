@@ -1,6 +1,9 @@
 body {
     max-width: 800px;
     background-color: rgb(2, 2, 79);
+    background-image: url(images/bgImage.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 form {
     margin-top: 40px;
