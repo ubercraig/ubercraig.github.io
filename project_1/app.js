@@ -13,6 +13,18 @@ let queryURL = baseURL + queryType
 
 
 $(()=> {
+//// Modal functionality - adapted from class example
+const $modal = $('#modal')
+const $modalButton = $('#close')
+const openModal = () => {
+    $modal.css('display', 'block')
+}
+const closeModal = () => {
+    $modal.css('display', 'none');
+}
+$modalButton.on('click', closeModal)
+setTimeout(openModal, 2000)
+
 const getCharacter = () => {
     // ajax functionality modified from class example
     $.ajax({

@@ -6,7 +6,10 @@ body {
     background-size: cover;
 }
 form {
-    margin-top: 40px;
+    margin-top: 50px;
+}
+.input-box {
+    width: 175px;
 }
 h1 {
     margin: auto;
@@ -28,6 +31,8 @@ a {
 img {
     width: 25vw;
     height: 25vw;
+    border: 2px solid gray;
+    border-radius: 3px;
 }
 #info-container {
     margin-left: 15px;
@@ -70,6 +75,9 @@ button {
     margin: 120px auto 100px;
     max-width: 310px;
     color: white;
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding: 20px;
 }
 footer {
     display: none;
@@ -79,7 +87,42 @@ footer {
     text-align: center;
 }
 
-/* tooltip code modified from https://www.w3schools.com/css/css_tooltip.asp */
+#modal {
+    background-color: rgba(0,0,0,0.4);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+    overflow: auto;  
+    display: none;
+}
+#modal-textbox {
+    background-color: rgb(215, 213, 213);
+    height: 250px;
+    width: 400px;
+    border-radius: 4px;
+    margin: 200px auto;
+    padding: 10px;
+    line-height: 120%;
+}
+.modal-button {
+	padding: 10px 15px;
+	background-color: #677996;
+	border: none;
+	outline: none;
+	border-radius: 3px;
+	color: white;
+	font-family: 'Arial';
+	cursor: pointer;
+}
+#modal-footer {
+	text-align: right;
+}
+
+
+/* tooltip code below modified from https://www.w3schools.com/css/css_tooltip.asp */
 .tooltip {
     position: relative;
     display: inline-block
@@ -87,7 +130,7 @@ footer {
 
 .tooltip .tooltiptext {
     visibility: hidden;
-    width: 120px;
+    width: 150px;
     background-color: gray;
     color: #fff;
     text-align: center;
