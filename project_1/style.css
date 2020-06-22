@@ -158,6 +158,8 @@ footer {
     border-color: transparent transparent gray transparent;
   }
 
+  /* CSS for Mobile Phones */
+/* // syntax for @media from https://www.w3schools.com/css/css_rwd_mediaqueries.asp */
   @media only screen and (max-width: 500px) {
       body {
           margin: auto;
