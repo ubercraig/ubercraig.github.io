@@ -81,6 +81,10 @@ button {
     border-radius: 5px;
     padding: 20px;
 }
+#my-team {
+    text-align: center;
+    color: white
+}
 footer {
     display: none;
     position: absolute;

@@ -8,7 +8,7 @@ const hash = "hash=cffe958a285936c219aa88249b47aab1"
 const queryType = "name="
 let nameQuery = ""
 let queryURL = baseURL + queryType 
-
+let featuredImage = ""
 
 
 $(()=> {
@@ -35,14 +35,16 @@ const getCharacter = () => {
         <div id="bio"> ${characterData.data.results[0].description}</div>
         `)
 
-        const $img = $('<img class="thumbnail">').attr('src',characterData.data.results[0].thumbnail.path+'.jpg')
-        $('#character-container').prepend($img)
-       
+        featuredImage = $('<img class="thumbnail">').attr('src',characterData.data.results[0].thumbnail.path+'.jpg')
+        $('#character-container').prepend(featuredImage)
+    
         // add to team button
-        $('#team-button').on('click', ()=> {
-            const $image = $('<img>').attr('src',characterData.data.results[0].thumbnail.path+'.jpg')
-            $('#team-container').append($image)
-            console.log($image)
+        $('#team-button').on('click', () => {
+            let $image = $('#character-container .thumbnail').attr('src',characterData.data.results[0].thumbnail.path+'.jpg')
+            $($image).clone().appendTo('#my-team')
+            
+            // console.log($image)
+           
         })
 
         //series button functionality
@@ -50,9 +52,9 @@ const getCharacter = () => {
         
             $('.series-results').remove()
             console.log(characterData.data.results[0].name)  /// for debug
-            for (i=0; i <=20; i++) {
+            for (i=0; i <20; i++) {
             let series = $('<div>').addClass('series-results').text(characterData.data.results[0].series.items[i].name)
-            // console.log(characterData.data.results[0].series.items[i].name)
+            console.log(characterData.data.results[0].series.items[i].name)
             $('#series-container').append(series)
             }
         })
@@ -60,9 +62,12 @@ const getCharacter = () => {
         // events button functionality
         $('.events').on('click', () => {
             $('.events-results').remove()
-            for (i=0; i <=20; i++) {
-            let events = $('<div class="events-results">').text(characterData.data.results[0].events.items[i].name)
+            console.log(characterData.data.results[0].events.items.length)
+            let eventsLength = characterData.data.results[0].events.items.length
+            for (i=0; i < eventsLength; i++) {
+            let events = $('<div>').addClass('events-results').text(characterData.data.results[0].events.items[i].name)
             $('#events-container').append(events)
+           
             }
         })
     }, (error) =>{
