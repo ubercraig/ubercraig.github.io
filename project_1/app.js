@@ -1,8 +1,6 @@
 console.log('App is connected');
 
 
-
-
 const baseURL = "https://gateway.marvel.com:443/v1/public/characters?"
 const pubKey = "apikey=ff411374090a15671c59a2fe9af6fe8c"
 const ts = "ts=1592423954"
@@ -43,7 +41,7 @@ const getCharacter = () => {
             $('.series-results').remove()
             console.log(characterData.data.results[0].name)  /// for debug
             for (i=0; i <=20; i++) {
-            let series = $('<div class="series-results">').text(characterData.data.results[0].series.items[i].name)
+            let series = $('<div>').addClass('series-results').text(characterData.data.results[0].series.items[i].name)
             console.log(characterData.data.results[0].series.items[i].name)
             $('#series-container').append(series)
             }
@@ -54,7 +52,7 @@ const getCharacter = () => {
             event.preventDefault()
             $('.events-results').remove()
             for (i=0; i <=20; i++) {
-            events = $('<div class="events-results">').text(characterData.data.results[0].events.items[i].name)
+            let events = $('<div class="events-results">').text(characterData.data.results[0].events.items[i].name)
             $('#events-container').append(events)
             }
         })

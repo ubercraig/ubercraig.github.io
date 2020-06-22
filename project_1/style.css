@@ -1,7 +1,7 @@
 body {
     max-width: 800px;
     background-color: rgb(2, 2, 79);
-    background-image: url(images/bgImage.jpg);
+    /* background-image: url(images/bgImage.jpg); */
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -48,15 +48,17 @@ img {
     font-size: 20px;
     color: white;
     text-align: justify;
+   
 }
 .button-container {
-    margin-top: 20px;
+    margin-top: 40px;
     display: flex;
     flex-direction: row; 
     justify-content: space-evenly;   
 }
 #series-container, #events-container {
     margin-top: 15px;
+    height: 600px;
     color: white
 }
 h5 {
@@ -86,7 +88,7 @@ footer {
     width: 100%;
     text-align: center;
 }
-
+/* modal styling adapted from class example */
 #modal {
     background-color: rgba(0,0,0,0.4);
 	position: fixed;
