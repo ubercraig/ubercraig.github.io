@@ -1,12 +1,18 @@
 body {
     max-width: 800px;
     background-color: rgb(2, 2, 79);
-    background-image: url(images/bgImage.jpg);
+    background-image: url(images/planet-earth-in-space.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
-form {
+.input-container {
+    display: flex;
+    flex-direction: row;
     margin-top: 50px;
+    height: 21px;
+}
+form {
+    margin-top: 0px;
 }
 .input-box {
     width: 175px;
@@ -15,6 +21,7 @@ h1 {
     margin: auto;
     text-align: center;
     color: white;
+    font-family: 'Revalia', cursive;
 }
 nav {
     text-align: center;
@@ -31,7 +38,7 @@ a {
 img {
     width: 25vw;
     height: 25vw;
-    border: 2px solid gray;
+    border: 3px solid gray;
     border-radius: 3px;
 }
 #info-container {
@@ -61,17 +68,22 @@ img {
     height: 600px;
     color: white
 }
-h5 {
-    text-align: center;
-    color: white;
-}
 .events-results, .series-results {
     margin-top: 7px;
 }
 button {
     display: none;
 }
+#suggest {
+    display: inline-block;
+    padding: 2px;
+    margin-left: 5px;
+}
+#team-button {
+    margin-top: 10px;
+}
 .about-text {
+    background-color: rgb(2, 2, 79);
     font-size: 20px;
     text-align: justify;
     margin: 120px auto 100px;
@@ -83,16 +95,16 @@ button {
 }
 #my-team {
     text-align: center;
-    color: white
+    color: white;
+    font-family: 'Revalia', cursive;
+    padding: 10px;
+    height: 500px;
 }
-footer {
-    display: none;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
+.team-text {
+    text-decoration: underline;
 }
-/* modal styling adapted from class example */
+
+/* modal code and styling adapted from class example */
 #modal {
     background-color: rgba(0,0,0,0.4);
 	position: fixed;
@@ -116,11 +128,8 @@ footer {
 .modal-button {
 	padding: 5px 10px;
 	background-color: #677996;
-	border: none;
-	outline: none;
 	border-radius: 3px;
 	color: white;
-	cursor: pointer;
 }
 #modal-footer {
 	text-align: right;
@@ -147,16 +156,7 @@ footer {
 .tooltip:hover .tooltiptext {
     visibility: visible;
   }
-  .tooltip .tooltiptext::after {
-    content: " ";
-    position: absolute;
-    bottom: 100%;  /* At the top of the tooltip */
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent transparent gray transparent;
-  }
+
 
   /* CSS for Mobile Phones */
 /* // syntax for @media from https://www.w3schools.com/css/css_rwd_mediaqueries.asp */
@@ -174,6 +174,7 @@ footer {
         font-size: 12px;
         color: white;
         text-align: justify;
+        max-width: 300px;
     }
     .tooltip:hover .tooltiptext {
         visibility: hidden;

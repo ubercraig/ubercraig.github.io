@@ -34,27 +34,23 @@ const getCharacter = () => {
         <div id="name"> ${characterData.data.results[0].name}</div>
         <div id="bio"> ${characterData.data.results[0].description}</div>
         `)
-
         featuredImage = $('<img class="thumbnail">').attr('src',characterData.data.results[0].thumbnail.path+'.jpg')
         $('#character-container').prepend(featuredImage)
     
-        // add to team button
+        // add to team button functionality
         $('#team-button').on('click', () => {
             let $image = $('#character-container .thumbnail').attr('src',characterData.data.results[0].thumbnail.path+'.jpg')
             $($image).clone().appendTo('#my-team')
-            
-            // console.log($image)
            
         })
 
         //series button functionality
         $('.series').on('click', () => {
-        
             $('.series-results').remove()
-            console.log(characterData.data.results[0].name)  /// for debug
+            // console.log(characterData.data.results[0].name)  /// for debug
             for (i=0; i <20; i++) {
             let series = $('<div>').addClass('series-results').text(characterData.data.results[0].series.items[i].name)
-            console.log(characterData.data.results[0].series.items[i].name)
+            // console.log(characterData.data.results[0].series.items[i].name)  /// for debug
             $('#series-container').append(series)
             }
         })
@@ -67,16 +63,20 @@ const getCharacter = () => {
             for (i=0; i < eventsLength; i++) {
             let events = $('<div>').addClass('events-results').text(characterData.data.results[0].events.items[i].name)
             $('#events-container').append(events)
-           
             }
         })
+
+        
+        
     }, (error) =>{
         console.log('error')
     })
    
 }
-
-
+// Suggest Button Alert functionality. Alert Syntax help from https://stackoverflow.com/questions/9340223/mulit-line-alert-in-javascript
+$('#suggest').on('click', () => {
+    alert('Need help getting started? Try one of these characters' + '\n' + 'Thanos' + '\n' + 'Iron Man' + '\n' + 'Captain America' + '\n' + 'Hulk' + '\n' + 'Spider-Man' + '\n' + 'Thor' + '\n' + 'Wolverine') 
+ })
 
 // Get Name of character from input box
 $('form').on('submit', (event) => {
