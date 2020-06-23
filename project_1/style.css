@@ -169,8 +169,10 @@ button {
         display: flex;
         flex-direction: column;
     }
+    h1 {
+        font-size: 23px;
+    }
     #bio {
-        margin: auto;
         font-size: 12px;
         color: white;
         text-align: justify;
