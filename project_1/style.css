@@ -189,4 +189,7 @@ button {
         height: 700px;
         color: white
     }
+    #suggest {
+        display: none;
+    }
   }
